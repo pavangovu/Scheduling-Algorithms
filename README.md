@@ -15,7 +15,7 @@ HRRN schedules different tasks according to their response ratio, which can be c
 ### RR (Round Robin)
 RR gives every task a slice of time to execute. Here the slice(quantum) is 1. When implementing RR algorithm, I used a queue to record the order of tasks. The task will execute in order. If the task doesn’t finish after execution of one time slice, it will re-join the queue waiting to be executed. However, if a new tasks arrives at the same time the current executing task times out, the new process is added to the tail of the queue and then the current unfinished process timing out is added behind it.
 
-#### SRT (Shortest Remaining Time)
+### SRT (Shortest Remaining Time)
 SRT is the pre-emptive version of SPN. It may pre-empt a new arrival task if it’s remaining service time is smaller than the current task. Also, it will schedule the new task when current task finishes. However, if the new task doesn’t arrive yet, it will wait until the new task arrives. When implementing SRT algorithm, I kept a list of the remaining time of every tasks.
 
 ### FB (Feedback)
